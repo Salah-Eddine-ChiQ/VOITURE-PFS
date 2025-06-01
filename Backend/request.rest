@@ -1,0 +1,163 @@
+
+### Test Client API 
+
+POST http://localhost:5000/api/clients/register
+Content-Type: application/json
+
+{
+  "nom": "Ahmed",
+  "permis": "AB12ssdc6",
+  "email": "ahmed@example.com",
+  "age": 30,
+  "contact": "0605623456",
+  "password": "mffddfghjjjjh"
+}
+
+####
+POST http://localhost:5000/api/clients/login
+Content-Type: application/json
+
+{
+  "email": "abdelilaherretby@gmail.com",
+  "password": "abcd123"
+}
+
+###
+PUT http://localhost:5000/api/clients/update-profile
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzAsImVtYWlsIjoic2FyYUBleGFtcGxlLmNvbSIsImlhdCI6MTc0NjU1MzE0NiwiZXhwIjoxNzQ2NTUzNDQ2fQ.F3K6PVZaBasA70Hb1gonvMBqb_12aZ32JgyuD_L60WA
+
+{
+  "nom": "hakim",
+  "email": "hakim@gmail.com",
+  "permis": "XYZ98",
+  "age": 67,
+  "contact": "060000000"
+}
+###
+GET  http://localhost:5000/api/reservations/mes-reservations
+ Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzAsImVtYWlsIjoic2FyYUBleGFtcGxlLmNvbSIsImlhdCI6MTc0NjYyNzY4NCwiZXhwIjoxNzQ2NjI3OTg0fQ.ovbIqkDKkEjuOz_kCWqqgHwdnz79Yx69jjeEIGxsw0I
+###
+
+PUT http://localhost:5000/api/reservations/6/status
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzAsImVtYWlsIjoic2FyYUBleGFtcGxlLmNvbSIsImlhdCI6MTc0NjYzMzkzNiwiZXhwIjoxNzQ2NjM0MjM2fQ.JVBuPDX2rh4jvtK7mAZ6ECoIdqhDdAIdLpXcwHA5vRY
+
+{
+  "annulee": true
+}
+
+#####
+GET  http://localhost:5000/api/reservations-historique/mes-historiques
+ Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzAsImVtYWlsIjoic2FyYUBleGFtcGxlLmNvbSIsImlhdCI6MTc0NjYyMTkyMSwiZXhwIjoxNzQ2NjIyMjIxfQ.KvkLB9p1oV4_d0fvFqSdKMXrSE-qWRVSKxNFanMdiwY
+
+######
+DELETE   http://localhost:5000/api/reservations-historique/delete-historique/13
+ Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzAsImVtYWlsIjoic2FyYUBleGFtcGxlLmNvbSIsImlhdCI6MTc0NjYyMjk2MywiZXhwIjoxNzQ2NjIzMjYzfQ.OuTnK63OFvVakiulzpfB2UiZc096Q2lPiWPfSM43WHw
+
+
+
+####  Test agence API
+
+POST http://localhost:5000/api/agences/register
+Content-Type: application/json
+
+{
+  "nom": "Agence Alpha",
+  "adresse": "123 rue de Paris",
+  "contact": "0601020304",
+  "email": "agence@example.com",
+  "password": "monmotdepasse"
+}
+
+###
+POST http://localhost:5000/api/agences/login
+Content-Type: application/json
+
+{
+  "email": "agence@example.com",
+  "password": "monmotdepasse"
+}
+
+######
+POST http://localhost:5000/api/agences/login
+Content-Type: application/json
+
+{
+  "email": "rahal@gmail.com",
+  "password": "aa"
+}
+
+
+
+#######
+POST http://localhost:5000/api/agences/register
+Content-Type: application/json
+
+{
+    "nom": "Agence Beta",
+    "adresse": "ras el ma",
+    "contact": "098343489",
+    "email": "agenceali@gmail.com",
+    "password": "123"
+}
+
+
+#########
+GET  http://localhost:5000/api/voitures/AllVoituresEtReservations
+Content-Type: application/json
+
+##########
+GET http://localhost:5000/api/reservations/41/reservation
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjQsImVtYWlsIjoiYWJkZWxpbGFoZXJyZXRieUBnbWFpbC5jb20iLCJpYXQiOjE3NDgwOTc2ODIsImV4cCI6MTc0ODA5Nzk4Mn0.Oh1ESSPhLe20UklH1ZGlZTnVhX_ChKjB82xn9OrOOWs
+
+
+
+
+##################
+POST  http://localhost:5000/api/factures/createFacture
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjQsImVtYWlsIjoiYWJkZWxpbGFoZXJyZXRieUBnbWFpbC5jb20iLCJpYXQiOjE3NDc0MTc3MjQsImV4cCI6MTc0NzQxODAyNH0.XhgFNU0cNIOXuUGm5u2tAk4WC-ZUWBTWi-r6o3860qw
+
+{
+  "id_reservation": 4,
+  "entreprise": "TechVision SARL",
+  "nom_chauffeur": "Youssef",
+  "prenom_chauffeur": "Benali",
+  "email_chauffeur": "youssef.benali@example.com",
+  "telephone_chauffeur": "0612345678",
+  "pays": "Maroc",
+  "rue": "10 Rue des Lilas",
+  "code_postal": "10000",
+  "ville": "Rabat"
+}
+
+
+########
+GET http://localhost:5000/api/reservations/client/4/confirmer
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjQsImVtYWlsIjoiYWJkZWxpbGFoZXJyZXRieUBnbWFpbC5jb20iLCJpYXQiOjE3NDc0NDE3NTQsImV4cCI6MTc0NzQ0MjA1NH0.wZepzq16I2BrqPA4nvwFESSYpqjAzJ9vWzbKnHXU4Vs
+
+
+
+##########
+Post http://localhost:5000/api/reservations
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjQsImVtYWlsIjoiYWJkZWxpbGFoZXJyZXRieUBnbWFpbC5jb20iLCJpYXQiOjE3NDc2NDc2MzMsImV4cCI6MTc0NzY0NzkzM30.Anw_qc3htaWSMBSQYHsymI3o1mJ5RwEANDRrTWN1TJk
+
+{
+  "date_depart": "2025-05-20",
+  "date_retour": "2025-05-25",
+  "id_voiture": 5,
+  "prix_journalier": 300,
+  "montantHT": 1500,
+  "TVA": 300,
+  "supp_local": 100,
+  "total_frais": 100,
+  "montantTTC": 1900,
+  "kilometrageType": "limité"
+}
