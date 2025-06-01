@@ -11,6 +11,7 @@ import React from 'react';
 // Import your improved chatbot component
 import Chatbot from './components/Chatbot';
 
+
 const App: React.FC = () => {
   return (
     <>
@@ -24,9 +25,9 @@ const App: React.FC = () => {
         <Route path="/agence_profile" element={<AgenceProfile />} />
         <Route path="/client_profile" element={<ClientProfile />} />
       </Routes>
-
-      {/* Floating chatbot */}
+      
       <Chatbot />
+      
     </>
   );
 };

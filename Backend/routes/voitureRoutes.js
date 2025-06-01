@@ -4,7 +4,8 @@ const router  = express.Router();
 const { authenticateClient } = require('../Middlewares/authMidleware');
 const { 
   getAllVoituresEtReservations, 
-  createCar 
+  createCar, 
+  getAllVoitures
 } = require('../Controllers/voiturecontroller');
 
 const upload = require('../Middlewares/multer');
@@ -14,5 +15,9 @@ router.post('/',upload.single('image'), authenticateClient, createCar);
 
 // GET - Voitures et réservations
 router.get('/AllVoituresEtReservations', getAllVoituresEtReservations);
+
+router.get('/AllVoitures',getAllVoitures);
+
+
 
 module.exports = router;

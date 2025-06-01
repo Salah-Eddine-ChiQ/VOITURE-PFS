@@ -3,6 +3,14 @@ const { getAllVoitures } = require('../Models/voituremodel');
 const { getAllReservationsWithVoiture } = require('../Models/reservationmodel');
 const voitureModel = require('../Models/voituremodel'); 
 
+exports.getAllVoitures=async(req,res) => {
+  const voitures = await getAllVoitures();
+
+  return res.status(200).json({
+      voitures
+    });
+}
+
 exports.getAllVoituresEtReservations = async (req, res) => {
   try {
     const voitures = await getAllVoitures();
@@ -85,4 +93,4 @@ exports.createCar = async (req, res) => {
     console.error("Erreur création:", error);
     res.status(500).json({ success: false, message: "Erreur interne du serveur" });
   }
-};
+}; 

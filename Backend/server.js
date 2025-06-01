@@ -17,7 +17,7 @@ const annonceRoutes=require('./routes/annonceRoutes')
 const app = express();
 
 app.use(cors({
-    origin: 'http://localhost:5173', // l'adresse de ton frontend React 
+    origin: 'http://localhost:5174', // l'adresse de ton frontend React 
     credentials: true
 }));
 app.use(express.json());
